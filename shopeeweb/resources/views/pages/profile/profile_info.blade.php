@@ -6,7 +6,7 @@
         <h3 style="margin-top:0;margin-bottom:5px;margin-top:6px;">Hồ sơ của tôi</h3>
         <div>Quản lý thông tin hồ sơ để bảo mật tài khoản</div>
     </div>
-    <form id="form-change-info" enctype="multipart/form-data">
+    <form action="" id="form-change-info" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="content__info-form">
             <div class="col-sm-8">

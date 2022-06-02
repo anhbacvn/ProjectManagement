@@ -96,7 +96,7 @@ use Illuminate\Support\Facades\Session;
             Swal.fire({
                 title: 'Nhập email tài khoản',
                 input: 'email',
-                inputPlaceholder: 'Nhập email',
+                inputPlaceholder: 'Email',
             }).then((result) => {
                 if (result.isConfirmed) {
                     loadingFlight('show', 'Loading')

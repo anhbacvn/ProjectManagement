@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\getavatar;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\App\Http\Requests;
@@ -10,7 +11,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
-
 session_start();
 
 use Illuminate\Http\Request;
@@ -202,4 +202,5 @@ class HomeController extends Controller
         }
         return $randomString;
     }
+
 }

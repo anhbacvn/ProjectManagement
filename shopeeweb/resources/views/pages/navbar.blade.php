@@ -79,15 +79,18 @@ use Illuminate\Support\Facades\Session;
                             </li>
                             <?php
                             $get_user = Session::get('get_user');
+                            // echo '<pre>';
+                            // print_r($get_user);
+                            // echo '</pre>';
                             if ($get_user) {
                             ?>
                                 <li class="user-menu-dropdown">
                                     <a href="{{URL::to('profile-info')}}">
-                                        @auth
-                                        <img src="{{URL::to('public/upload/image_user/'.auth()->user()->avatar)}}" alt="" style="width:25px;height:25px;">
+                                        @if($get_user->avatar!=null)
+                                        <img src="{{URL::to('public/upload/image_user/'.$get_user->avatar)}}" alt="" style="width:25px;height:25px;">
                                         @else
                                         <img src="{{URL::to('public/upload/image_user/avatar_default.jpg')}}" alt="" style="width:25px;height:25px;">
-                                        @endauth
+                                        @endif
                                         {{$get_user->name}}
                                     </a>
                                     <ul class="user-menu-dropdown-content body-tab">

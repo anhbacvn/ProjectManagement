@@ -27,7 +27,7 @@ class ProfileController extends Controller
         $this->AuthLogin();
         $user = Session::get('get_user');
         $get_info_user = DB::table('users')->where('id', $user->id)->first();
-
+        Session::put('get_info_user',$get_info_user);
         return view('pages.profile')->with('get_info_user', $get_info_user);
     }
 
@@ -276,7 +276,6 @@ class ProfileController extends Controller
             $result = DB::table('users')->where('id', $user->id)->update($data);
             if ($result) {
                 move_uploaded_file($file, 'public/upload/image_user/' . $file_name);
-
                 return response()->json(['status' => 200, 'msg' => 'Thay đổi thông tin thành công']);
             }
         } else {
