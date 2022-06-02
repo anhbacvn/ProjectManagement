@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +20,6 @@ use App\Http\Controllers\ProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 // Frontend
 Route::get('/',[HomeController::class,'index']);
 Route::get('/home',[HomeController::class,'index']);
@@ -138,12 +138,6 @@ Route::get('/my-purchase-status/{status}',[ProfileController::class,'my_purchase
 Route::get('/product-detail/{id}',[ProfileController::class,'product_detail']);
 Route::get('/confirm-order/{id}',[ProfileController::class,'confirm_order'])->whereNumber('id');
 Route::post('/search-my-purchase',[ProfileController::class,'search_my_purchase']);
-
-
-
-
-
-
 
 
 
