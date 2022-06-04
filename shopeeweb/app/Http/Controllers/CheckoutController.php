@@ -53,7 +53,7 @@ class CheckoutController extends Controller
         $check_address_shipping = DB::table('tbl_address_shipping')->where('user_id', $user->id)->count();
 
         if ($check_address_shipping > 0) {
-            $all_cart_by_user = DB::table('tbl_address_shipping')->where('user_id', $user->id)->get();
+            $all_cart_by_user = DB::table('tbl_address_shipping')->where('user_id', $user->id)->where('address_shipping_status','1')->get();
             Session::put('all_cart_by_user', $all_cart_by_user);
             return view('pages.checkout.show_checkout')->with('address_by_user', $check_address_shipping)->with('category', $cate_product)->with('brand', $brand_product)->with('data_cart', $data_cart_by_user)->with('total_cart', $total_cart);
         } else {
